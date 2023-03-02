@@ -12,7 +12,6 @@ A guide covering most of the kubernetes best practices based on your level of ex
 - Moderate
     + [Namespace](#namespace)
         + [Limit Resource Usages](#limit-resource-usages)
-        + [Max Pods](#max-pods)
 - Experienced
     + [Namespace](#namespace)
         + [When To Use Multiple Namespaces](#when-to-use-multiple-namespaces)
