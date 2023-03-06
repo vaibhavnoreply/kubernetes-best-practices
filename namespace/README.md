@@ -2,18 +2,16 @@
 
 ## Table of Contents
 
+[Namespace](#namespace)
 - Intermediate
-    + [Namespace](#namespace)
-        + [Don’t Use Default Namespace](#dont-use-default-namespace)
-        + [Naming Convention](#naming-convention)
-        + [Labels](#labels)
+    + [Don’t Use Default Namespace](#dont-use-default-namespace)
+    + [Naming Convention](#naming-convention)
+    + [Labels](#labels)
 - Moderate
-    + [Namespace](#namespace)
-        + [Limit Resource Usages](#limit-resource-usages)
+    + [Limit Resource Usages](#limit-resource-usages)
 - Experienced
-    + [Namespace](#namespace)
-        + [When To Use Multiple Namespaces](#when-to-use-multiple-namespaces)
-        + [Should Have RBAC Configured If Multiple Namespaces](#should-have-rbac-configured-if-multiple-namespaces)
+    + [When To Use Multiple Namespaces](#when-to-use-multiple-namespaces)
+    + [Should Have RBAC Configured If Multiple Namespaces](#should-have-rbac-configured-if-multiple-namespaces)
 
 ---
 ---

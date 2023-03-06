@@ -2,30 +2,28 @@
 
 ## Table of Contents
 
+[Application deployment](#application-deployment)
 - Intermediate
-    + [Application deployment](#application-deployment)
-        + [Bind pods to deployment or replicaset (Avoid using naked pod)](#bind-pods-to-deployment-or-replicaset-avoid-using-naked-pod)
-        + [Don't use latest tags](#dont-use-latest-tags)
-        + [One process per container](#one-process-per-container)
-        + [Create services before their workloads](#create-services-before-their-workloads)
-        + [Configure a liveness probe](#configure-a-liveness-probe)
-        + [Configure a readiness probe](#configure-a-readiness-probe)
-        + [Labels](#labels)
+    + [Bind pods to deployment or replicaset (Avoid using naked pod)](#bind-pods-to-deployment-or-replicaset-avoid-using-naked-pod)
+    + [Don't use latest tags](#dont-use-latest-tags)
+    + [One process per container](#one-process-per-container)
+    + [Create services before their workloads](#create-services-before-their-workloads)
+    + [Configure a liveness probe](#configure-a-liveness-probe)
+    + [Configure a readiness probe](#configure-a-readiness-probe)
+    + [Labels](#labels)
 - Moderate
-    + [Application deployment](#application-deployment)
-        + [Run more than one replica for deployments](#run-more-than-one-replica-for-deployments)
-        + [Avoid Pods being placed into a single node](#avoid-pods-being-placed-into-a-single-node)
-        + [Limit Resource Usages](#limit-resource-usages)
-        + [Set CPU request to 1 CPU or below](#set-cpu-request-to-1-cpu-or-below)
-        + [Disable CPU limits - Unless you have a good use case](#disable-cpu-limits-unless-you-have-a-good-use-case)
-        + [Mount secrets as volume not as ENV variables](#mount-secrets-as-volume-not-as-env-variables)
-        + [Use configMaps to store application configurations and env variables](#use-configmaps-to-store-application-configurations-and-env-variables)
+    + [Run more than one replica for deployments](#run-more-than-one-replica-for-deployments)
+    + [Avoid Pods being placed into a single node](#avoid-pods-being-placed-into-a-single-node)
+    + [Limit Resource Usages](#limit-resource-usages)
+    + [Set CPU request to 1 CPU or below](#set-cpu-request-to-1-cpu-or-below)
+    + [Disable CPU limits - Unless you have a good use case](#disable-cpu-limits-unless-you-have-a-good-use-case)
+    + [Mount secrets as volume not as ENV variables](#mount-secrets-as-volume-not-as-env-variables)
+    + [Use configMaps to store application configurations and env variables](#use-configmaps-to-store-application-configurations-and-env-variables)
 - Experienced
-    + [Application deployment](#application-deployment)
-        + [If using multiple replica of deployments avoid using local state](#if-using-multiple-replica-of-deployments-avoid-using-local-state)
-        + [Allow deploying containers only from known registries](#allow-deploying-containers-only-from-known-registries)
-        + [Try running container as non root user](#try-running-container-as-non-root-user)
-        + [Choose deployment strategy wisely](#choose-deployment-strategy-wisely)
+    + [If using multiple replica of deployments avoid using local state](#if-using-multiple-replica-of-deployments-avoid-using-local-state)
+    + [Allow deploying containers only from known registries](#allow-deploying-containers-only-from-known-registries)
+    + [Try running container as non root user](#try-running-container-as-non-root-user)
+    + [Choose deployment strategy wisely](#choose-deployment-strategy-wisely)
 ---
 ---
 
