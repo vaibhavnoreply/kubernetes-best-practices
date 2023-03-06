@@ -1,0 +1,13 @@
+# Namespace with ResourceQuota
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  namespace: <<NAMESPACE>>
+  name: <<NAME>>
+spec:
+  hard:
+    pods: <<PODS>> # Could be any other resources as well
+    requests.cpu: <<REQUEST CPU>>
+    requests.memory: <<REQUEST MEMORY>>
+    limits.cpu: <<LIMIT CPU>>
+    limits.memory: <<LIMIT MEMORY>>

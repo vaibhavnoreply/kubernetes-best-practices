@@ -1,0 +1,43 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service
+  labels:
+    name: <<NAME>>
+    type: <<SERVICE TYPE>>
+  namespace: <<NAMESPACE>>
+spec:
+  ports:
+  - protocol: <<PROTOCOL>>
+    port: <<PORT NUMBER>>
+    targetPort: <<TARGET PROT>>
+  type: <<SERVICE TYPE>>
+  selector:
+    app: <<APP NAME>>
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: <<NAMESPACE>>
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: <<APP NAME>>
+  template:
+    metadata:
+      labels:
+        app: <<NAME>>
+    spec:
+      containers:
+      - name: <<APP NAME>>
+        image: <<IMAGE PATH>>
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "0.1"
+            memory: 100Mi

@@ -5,39 +5,3 @@ metadata:
   name: <<NAMESPACE>>
   labels:
     name: <<NAME>>
----
-
-# Namespace with LimitRange
-apiVersion: v1
-kind: LimitRange
-metadata:
-  namespace: <<NAMESPACE>>
-  name: <<NAME>>
-spec:
-  limits:
-  - default:
-      cpu: <<DEFAULT CPU>>
-    defaultRequest:
-      cpu: <<DEFAULT REQUEST CPU>>
-    max:
-      cpu: <<MAX CPU>>
-    min:
-      cpu: <<MIN CPU>>
-    type: Container
----
-
-# Namespace with ResourceQuota
-apiVersion: v1
-kind: ResourceQuota
-metadata:
-  namespace: <<NAMESPACE>>
-  name: <<NAME>>
-spec:
-  hard:
-    pods: <<PODS>> # Could be any other resources as well
-    requests.cpu: <<REQUEST CPU>>
-    requests.memory: <<REQUEST MEMORY>>
-    limits.cpu: <<LIMIT CPU>>
-    limits.memory: <<LIMIT MEMORY>>
----
-

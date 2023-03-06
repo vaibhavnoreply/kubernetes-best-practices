@@ -6,7 +6,11 @@ A guide covering most of the kubernetes best practices based on your level of ex
 
 - Intermediate
     + [Namespace](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/namespace/README.md)
+    + [Application deployment]()
 - Moderate
     + [Namespace](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/namespace/README.md)
+    + [Application deployment]()
 - Experienced
     + [Namespace](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/namespace/README.md)
+    + [Application deployment]()
+

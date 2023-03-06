@@ -1,0 +1,17 @@
+# Namespace with LimitRange
+apiVersion: v1
+kind: LimitRange
+metadata:
+  namespace: <<NAMESPACE>>
+  name: <<NAME>>
+spec:
+  limits:
+  - default:
+      cpu: <<DEFAULT CPU>>
+    defaultRequest:
+      cpu: <<DEFAULT REQUEST CPU>>
+    max:
+      cpu: <<MAX CPU>>
+    min:
+      cpu: <<MIN CPU>>
+    type: Container
