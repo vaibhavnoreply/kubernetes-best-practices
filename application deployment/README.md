@@ -90,7 +90,7 @@ When you run two or more replicas per service, you are increasing the availabili
 
 Even if you run several copies of your Pods, there are no guarantees that losing a node won't take down your service. Consider the following scenario: you have 11 replicas on a single cluster node. If the node is made unavailable, the 11 replicas are lost, and you have downtime.
 
-We should apply [anti-affinity rules](#https://cloudmark.github.io/Node-Management-In-GKE/#pod-anti-affinity-rules) so that pods are spread in all the nodes of your cluster.
+We should apply [anti-affinity rules](https://cloudmark.github.io/Node-Management-In-GKE/#pod-anti-affinity-rules) so that pods are spread in all the nodes of your cluster.
 
 #### Limit Resource Usages
 
@@ -103,7 +103,7 @@ With the <b>ResourceQuotas</b>, you can limit the total resource consumption of 
 
 Unless you have computational intensive job, it is recommended to set the request to 1 cpu or below.
 
-For more information watch [this](#https://www.youtube.com/watch?v=xjpHggHKm78) video.
+For more information watch [this](https://www.youtube.com/watch?v=xjpHggHKm78) video.
 
 #### Disable CPU limits - Unless you have a good use case
 
@@ -130,7 +130,7 @@ Storing persistent data in a container's local filesystem prevents the encompass
 
 One of the most common custom policies that you might want to consider is to restrict the images that can be deployed in your cluster.
 
-Read [this](#https://blog.openpolicyagent.org/securing-the-kubernetes-api-with-open-policy-agent-ce93af0552c3#3c6e) to get more details.
+Read [this](https://blog.openpolicyagent.org/securing-the-kubernetes-api-with-open-policy-agent-ce93af0552c3#3c6e) to get more details.
 
 #### Try running container as non root user
 
