@@ -55,7 +55,7 @@ For a production cluster, consider not using `default` namespace. Instead, make 
 
 Labels are key-value pairs used to describe an application. A common set of labels allows tools to work interoperably. So whenever creating namespace we must include labels into it. Kubernetes recommends using a set of standard labels to describe an application. These can be helpful in documenting and organizing your application. 
 
-For more understanding read [recommended guides](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) and [well-known labels](https://kubernetes.io/docs/reference/labels-annotations-taints/).
+These are [recommended guides](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) and [well-known labels](https://kubernetes.io/docs/reference/labels-annotations-taints/) provided by kubernetes.
 
 #### Limit Resource Usages
 
