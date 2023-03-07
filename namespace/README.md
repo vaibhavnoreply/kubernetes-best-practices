@@ -46,7 +46,8 @@ For a production cluster, consider not using <mark>default</mark> namespace. Ins
 
 #### Labels
 
-Labels are key-value pairs used to describe an application. A common set of labels allows tools to work interoperably. So whenever creationg namespace we must include labels into it. Kubernetes recommends using a set of standard labels to describe an application. These can be helpful in documenting and organizing your application. Read [this](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) guide to understand Recommended labels.
+Labels are key-value pairs used to describe an application. A common set of labels allows tools to work interoperably. So whenever creationg namespace we must include labels into it. Kubernetes recommends using a set of standard labels to describe an application. These can be helpful in documenting and organizing your application. 
+Read [this](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) guide to understand Recommended labels and also check [Well-Known labels](https://kubernetes.io/docs/reference/labels-annotations-taints/).
 
 #### Limit Resource Usages
 
