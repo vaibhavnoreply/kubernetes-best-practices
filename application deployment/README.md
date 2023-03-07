@@ -14,7 +14,7 @@
 - Moderate
     + [Run more than one replica for deployments](#run-more-than-one-replica-for-deployments)
     + [Avoid Pods being placed into a single node](#avoid-pods-being-placed-into-a-single-node)
-    + [Limit Resource Usages](#limit-resource-usages)
+    + [Set memory limits and requests for all containers](#set-memory-limits-and-requests-for-all-containers)
     + [Set CPU request to 1 CPU or below](#set-cpu-request-to-1-cpu-or-below)
     + [Disable CPU limits - Unless you have a good use case](#disable-cpu-limits-unless-you-have-a-good-use-case)
     + [Mount secrets as volume not as ENV variables](#mount-secrets-as-volume-not-as-env-variables)
@@ -28,13 +28,20 @@
 ---
 
 ## Application deployment
+
+```
+kubectl apply -f <<filename.yaml>>
+```
+
+[Here](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/application%20deployment/deployment.yaml) is an example of basic deployment.yaml
+
 ---
 
 #### Bind pods to deployment or replicaset (Avoid using naked pod)
 
-Pods are the fundamental Kubernetes building block for your container and now you hear that you shouldn't use Pods directly but through an abstraction such as a Deployment or replicaset.
+`Pods` are the fundamental Kubernetes building block for your container and now you hear that you shouldn't use `Pods` directly but through an abstraction such as a Deployment or replicaset.
 
-If you deploy a Pod directly to your Kubernetes cluster, your container(s) will run, but nothing takes care of its lifecycle. Once a node goes down, capacity on the current node is needed, etc the Pod will get lost forever. 
+If you deploy a `Pod` directly to your Kubernetes cluster, your container(s) will run, but nothing takes care of its lifecycle. Once a node goes down, capacity on the current node is needed, etc the Pod will get lost forever. 
 
 Thats the point where building blocks such as ReplicaSet and Deployment come into play. A ReplicaSet acts as a supervisor to the Pods it watches and recreates Pods that don´t exist anymore. Deployments are an even higher abstraction and create and manage ReplicaSets to enable the developer to use a declarative state instead of imperative commands (e.g. kubectl rolling-update). The real advantage is that Deployments will automatically do rolling-updates and always ensure a given target state instead of having to deal with imperative changes.
 
@@ -72,13 +79,19 @@ If you only use DNS to discover the cluster IP for a Service, you don't need to 
 
 The Liveness probe is designed to restart your container when it's stuck. Kubernetes performs a health check to ensure the application is responsive and running as intended. In the event the `livenessProbe` fails, the kubelet default policy `restarts` the container to bring it back-up.
 
+[Here](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/application%20deployment/deployment-with-liveness.yaml) is an example of how to create deployment.yaml with liveness probe
+
 #### Configure a readiness probe
 
 Kubernetes checks if the application is ready to start serving traffic before allowing traffic to a pod. This essentially indicates whether a pod is available to accept traffic and respond to requests.
 
+[Here](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/application%20deployment/deployment-with-readiness.yaml) is an example of how to create deployment.yaml with readiness probe
+
 #### Labels
 
-Labels are key-value pairs used to describe an application. A common set of labels allows tools to work interoperably. So whenever creationg namespace we must include labels into it. Kubernetes recommends using a set of standard labels to describe an application. These can be helpful in documenting and organizing your application. Read [this](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) guide to understand Recommended labels.
+Labels are key-value pairs used to describe an application. A common set of labels allows tools to work interoperably. So whenever creating any deployment resource we must include labels into it. Kubernetes recommends using a set of standard labels to describe an application. These can be helpful in documenting and organizing your application.
+
+These are [recommended guides](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) and [well-known labels](https://kubernetes.io/docs/reference/labels-annotations-taints/) provided by kubernetes.
 
 #### Run more than one replica for deployments
 
@@ -90,12 +103,12 @@ Even if you run several copies of your Pods, there are no guarantees that losing
 
 We should apply [anti-affinity rules](https://cloudmark.github.io/Node-Management-In-GKE/#pod-anti-affinity-rules) so that pods are spread in all the nodes of your cluster.
 
-#### Limit Resource Usages
+#### Set memory limits and requests for all containers
 
-Resource limits are used to constrain how much CPU and memory your containers can utilise and are set using the resources property of a containerSpec. 
+Limits and Requests are important settings when working with Kubernetes.
 
-With the <b>LimitRange</b> object, you can define default values for resource requests and limits for individual containers inside namespaces.
-With the <b>ResourceQuotas</b>, you can limit the total resource consumption of all containers inside a Namespace. You can also set quotas for other Kubernetes objects such as the number of Pods in the current namespace.
+- Kubernetes defines Limits as the maximum amount of a resource to be used by a container. This means that the container can never consume more than the memory amount or CPU amount indicated. 
+- Requests, on the other hand, are the minimum guaranteed amount of a resource that is reserved for a container.
 
 #### Set CPU request to 1 CPU or below
 

@@ -64,8 +64,8 @@ Containers without limits can lead to resource contention with other containers 
 With the `LimitRange` object, you can define default values for resource requests and limits for individual containers inside namespaces.
 With the `ResourceQuotas`, you can limit the total resource consumption of all containers inside a Namespace. You can also set quotas for other Kubernetes objects such as the number of Pods in the current namespace.
 
-[Here](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/namespace/namespace-with-limit.yaml) is an example of how to create namespace using limit.<br /> 
-[Here](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/namespace/namespace-with-resources-quota.yaml) is an example of how to create namespace using resource quota.
+[Here](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/namespace/namespace-with-limit.yaml) is an example of how to create namespace using `limit`.<br /> 
+[Here](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/namespace/namespace-with-resources-quota.yaml) is an example of how to create namespace using `resource quota`.
 
 Read [official document](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for more information.
 
@@ -75,4 +75,6 @@ For cluster with a few to tens of users, you should not need to create or think 
 
 #### Should Have RBAC Configured If Multiple Namespaces
 
-Enhancing role-based access controls (RBAC) by limiting users and processes to certain namespaces. RBAC can work with either the <b>ClusterRole</b> resource type, which is scoped to the entire cluster, or the <b>Role</b> resource type, which is scoped to a specific namespace. This means that you can limit the resources a user is allowed to access, either globally or within a particular namespace.
+Enhancing role-based access controls (RBAC) by limiting users and processes to certain namespaces. RBAC can work with either the `ClusterRole` resource type, which is scoped to the entire cluster, or the `Role` resource type, which is scoped to a specific namespace. This means that you can limit the resources a user is allowed to access, either globally or within a particular namespace.
+
+Read [this](https://learnk8s.io/rbac-kubernetes) document for more information.
