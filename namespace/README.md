@@ -64,7 +64,7 @@ Containers without limits can lead to resource contention with other containers 
 With the `LimitRange` object, you can define default values for resource requests and limits for individual containers inside namespaces.
 With the `ResourceQuotas`, you can limit the total resource consumption of all containers inside a Namespace. You can also set quotas for other Kubernetes objects such as the number of Pods in the current namespace.
 
-[Here](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/namespace/namespace-with-limit.yaml) is an example of how to create namespace using limit. 
+[Here](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/namespace/namespace-with-limit.yaml) is an example of how to create namespace using limit.\ 
 [Here](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/namespace/namespace-with-resources-quota.yaml) is an example of how to create namespace using resource quota.
 
 Read [official document](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for more information.
