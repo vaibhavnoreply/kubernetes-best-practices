@@ -44,7 +44,7 @@ Read [reference document](https://gist.github.com/StevenACoffman/3e626ada8ef8240
 
 When creating Kubernetes Pods, it is for certain reasons not advisable to use `latest` tags on Container Images.
 
-The reason of not using latest tags is that once we create kubernets pod it assigns `imagePullPolicy` to it. By default this will set to `IfNotPresent` which means that the container runtime will only pull the image if it is not present on the node the Pod was assigned to. Once you use `latest` as an image tag this default behavior switches to `Always` resulting in the runtime pulling the image every time it starts up a container using that image in a Pod.
+The reason of not using latest tags is that once we create kubernetes pod it assigns `imagePullPolicy` to it. By default this will set to `IfNotPresent` which means that the container runtime will only pull the image if it is not present on the node the Pod was assigned to. Once you use `latest` as an image tag this default behavior switches to `Always` resulting in the runtime pulling the image every time it starts up a container using that image in a Pod.
 
 There are two really important reasons why this is really bad thing to do:
 - You loose control over which exact code is running in your system

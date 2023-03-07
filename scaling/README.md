@@ -19,7 +19,7 @@
 
 #### Should have metrics server installed
 
-Metrics Server collects resource metrics from Kubelets and exposes them in Kubernetes apiserver through Metrics API for use by `Horizontal Pod Autoscaler` and `Vertical Pod Autoscaler`.
+Metrics Server collects resource metrics from Kubelet and exposes them in Kubernetes apiserver through Metrics API for use by `Horizontal Pod Autoscaler` and `Vertical Pod Autoscaler`.
 
 Metrics Server offers:
 - A single deployment that works on most clusters
@@ -37,4 +37,4 @@ The [Horizontal Pod Autoscaler (HPA)](https://kubernetes.io/docs/tasks/run-appli
 
 #### Don't use the Vertical Pod Autoscaler while it's still in beta
 
-This can be useful for scaling applications that can't be scaled horizontally. However, the VPA is curently in beta and it has some known [limitations](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler#limitations-of-beta-version) (for example, scaling a Pod by changing its resource requirements, requires the Pod to be killed and restarted).
+This can be useful for scaling applications that can't be scaled horizontally. However, the VPA is currently in beta and it has some known [limitations](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler#limitations-of-beta-version) (for example, scaling a Pod by changing its resource requirements, requires the Pod to be killed and restarted).
