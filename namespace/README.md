@@ -34,6 +34,7 @@ kubectl create namespace <<NAMESPACE>>
 ```
 
 [Here](https://github.com/vaibhavneedreply/kubernetes-best-practices/blob/master/namespace/namespace.yaml) is an example of creating namespace programmatically.
+
 ---
 
 #### Don’t Use Default Namespace
