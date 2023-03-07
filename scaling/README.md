@@ -9,8 +9,6 @@
 - Moderate
     + [Use the Horizontal Pod Autoscaler for apps with variable usage patterns](#use-the-horizontal-pod-autoscaler-for-apps-with-variable-usage-patterns)
     + [Don't use the Vertical Pod Autoscaler while it's still in beta](#dont-use-the-vertical-pod-autoscaler-while-its-still-in-beta)
-- Experienced
-    + [](#)
 ---
 ---
 
