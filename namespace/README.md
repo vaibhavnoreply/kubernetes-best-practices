@@ -47,7 +47,7 @@ For a production cluster, consider not using `default` namespace. Instead, make 
 
 #### Naming Convention
 
-- Avoid creating namespaces with the prefix <mark>kube-</mark>, since it is reserved for kubernetes system namespaces.
+- Avoid creating namespaces with the prefix `kube-`, since it is reserved for kubernetes system namespaces.
 - They should only contains alphanumeric characters and hyphens.
 - The alpha characters can only be lower-case, and names cannot start with hyphens
 
@@ -55,7 +55,7 @@ For a production cluster, consider not using `default` namespace. Instead, make 
 
 Labels are key-value pairs used to describe an application. A common set of labels allows tools to work interoperably. So whenever creating namespace we must include labels into it. Kubernetes recommends using a set of standard labels to describe an application. These can be helpful in documenting and organizing your application. 
 
-Read [this](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) guide to understand Recommended labels and also check [Well-Known labels](https://kubernetes.io/docs/reference/labels-annotations-taints/).
+For more understanding read [recommended guides](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) and [well-known labels](https://kubernetes.io/docs/reference/labels-annotations-taints/).
 
 #### Limit Resource Usages
 
